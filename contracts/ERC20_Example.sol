@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: UNLICENSED
-pragma solidity >=0.7.0 <0.9.0;
+pragma solidity >=0.5.16<0.9.0;
 
 contract ERC20_Example{
 
@@ -14,11 +14,14 @@ contract ERC20_Example{
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
-    constructor(uint256 _initialSupply) {
-        balanceOf[msg.sender]=_initialSupply;
-        totalSupply =_initialSupply;
+    // function EERC20_Example(uint256 _initialSupply) public {
+    //     balanceOf[msg.sender]=_initialSupply;
+    //     totalSupply =_initialSupply;
+    // }
+     function EERC20_Example() public {
+        balanceOf[msg.sender]=1000;
+        totalSupply =1000;
     }
-    
     modifier hasEnough(address _spender,uint256 _amount){
         require(balanceOf[_spender]>=_amount);
         _;
