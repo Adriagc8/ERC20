@@ -1,5 +1,5 @@
-const ERC20_Example = artifacts.require("./ERC20_Example.sol");
+const Tutorial1 = artifacts.require("./Tutorial1.sol");
 
 module.exports = function (deployer) {
-  deployer.deploy(ERC20_Example);
+  deployer.deploy(Tutorial1);
 };
