@@ -1,5 +1,5 @@
-const Tutorial1 = artifacts.require("./Tutorial1.sol");
+const ERC20_Example = artifacts.require("./ERC20_Example.sol");
 
 module.exports = function (deployer) {
-  deployer.deploy(Tutorial1, 1000000); // to pass arguments to the constructor of the contract, user ","
+  deployer.deploy(ERC20_Example, 1000000); // to pass arguments to the constructor of the contract, user ","
 };

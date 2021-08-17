@@ -6,7 +6,8 @@ contract ERC20_Example{
     uint256 public totalSupply;
     string public name="ERC20 Example";
     string public symbol="ERC20E";
-   
+    string public standard="ERC20E Token v1.0";
+
     mapping(address =>uint256) public balanceOf;
     mapping(address => mapping(address=>uint256))public allowance;
     //function allowance(address _owner, address _spender) public view returns (uint256 remaining)
@@ -14,14 +15,11 @@ contract ERC20_Example{
     event Transfer(address indexed _from, address indexed _to, uint256 _value);
     event Approval(address indexed _owner, address indexed _spender, uint256 _value);
 
-    // function EERC20_Example(uint256 _initialSupply) public {
-    //     balanceOf[msg.sender]=_initialSupply;
-    //     totalSupply =_initialSupply;
-    // }
-     function EERC20_Example() public {
-        balanceOf[msg.sender]=1000;
-        totalSupply =1000;
+    constructor (uint256 _initialSupply) public {
+        balanceOf[msg.sender]=_initialSupply;
+        totalSupply =_initialSupply;
     }
+
     modifier hasEnough(address _spender,uint256 _amount){
         require(balanceOf[_spender]>=_amount);
         _;

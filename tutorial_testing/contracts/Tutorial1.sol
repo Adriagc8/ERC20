@@ -19,4 +19,6 @@ contract Tutorial1 {
         balanceOf[msg.sender]=_initialSupply;
         totalSupply = _initialSupply;
     }
+
+
 }
