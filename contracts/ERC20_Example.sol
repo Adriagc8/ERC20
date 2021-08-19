@@ -51,7 +51,7 @@ contract ERC20_Example{
         require(allowance[_from][msg.sender]>=_value);
         
         //Change the balance
-        balanceOf[msg.sender]-=_value;
+        balanceOf[_from]-=_value;
         balanceOf[_to]+=_value;
         
         //Update allowance
